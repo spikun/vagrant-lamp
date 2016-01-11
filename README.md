@@ -21,7 +21,7 @@ Usage
 -----
 
 ### Startup
-	$ git clone http://www.github.com/mattandersen/vagrant-lamp
+	$ git clone http://www.github.com/spikun/vagrant-lamp
 	$ cd vagrant-lamp
 	$ vagrant up
 
@@ -43,6 +43,7 @@ Technical Details
 * Apache 2
 * PHP 5.5
 * MySQL 5.5
+* phpmyadmin 4.0.10deb1
 
 We are using the base Ubuntu 14.04 box from Vagrant. If you don't already have it downloaded
 the Vagrantfile has been configured to do it for you. This only has to be done once

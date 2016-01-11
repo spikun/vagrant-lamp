@@ -29,6 +29,7 @@ EOD
 	apache_go
 	php_go
 	mysql_go
+	phpmyadmin_go
 
 	touch /var/lock/vagrant-provision
 }
@@ -85,9 +86,11 @@ EOF
 php_go() {
 	apt-get -y install php5 php5-curl php5-mysql php5-sqlite php5-xdebug
 
+	php5-mcryptphp5-mcrypt
+	
 	sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_config_file}
 	sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
-
+	
 	cat << EOF > ${xdebug_config_file}
 zend_extension=xdebug.so
 xdebug.remote_enable=1
@@ -124,6 +127,14 @@ mysql_go() {
 
 	service mysql restart
 	update-rc.d apache2 enable
+}
+
+phpmyadmin_go() {
+	apt-get -y update
+	apt-get -y install phpmyadmin > /dev/null 2>&1
+	echo "# phpMyAdmin Configuration" >> /etc/apache2/apache2.conf
+	echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+	service apache2 restart
 }
 
 main
