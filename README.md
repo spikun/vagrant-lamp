@@ -41,7 +41,7 @@ Technical Details
 -----------------
 * Ubuntu 14.04 64-bit
 * Apache 2
-* PHP 5.5
+* PHP 5.6
 * MySQL 5.5
 * phpmyadmin 4.0.10deb1
 

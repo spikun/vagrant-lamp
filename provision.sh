@@ -84,6 +84,10 @@ EOF
 }
 
 php_go() {
+	add-apt-repository ppa:ondrej/php5-5.6
+	
+	apt-get -y update
+	
 	apt-get -y install php5 php5-curl php5-mysql php5-sqlite php5-xdebug
 
 	php5-mcryptphp5-mcrypt
