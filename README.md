@@ -37,6 +37,9 @@ Externally the MySQL server is available at port 8889, and when running on the V
 Username: root
 Password: root
 
+#### phpmyadmin
+phpmyadmin at <http://localhost:8888/phpmyadmin> (user: root, password: root)
+
 Technical Details
 -----------------
 * Ubuntu 14.04 64-bit
